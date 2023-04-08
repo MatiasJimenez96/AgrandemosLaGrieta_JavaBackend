@@ -1,0 +1,5 @@
+package com.matiasjimenez.microservicios.app.quiz.service;
+
+public class CategoriaServiceImpl {
+
+}

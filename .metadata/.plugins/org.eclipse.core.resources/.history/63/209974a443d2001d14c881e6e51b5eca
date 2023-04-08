@@ -1,0 +1,5 @@
+package com.matiasjimenez.microservicios.app.quiz.controller;
+
+public class CategoriaController {
+
+}

@@ -1,0 +1,13 @@
+spring.application.name=microservicio-gateway
+server.port=8090
+
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+spring.cloud.gateway.globalcors.cors-configurations.[/**].allowed-origins[0]=*
+spring.cloud.gateway.globalcors.cors-configurations.[/**].allowed-methods[0]=*
+spring.cloud.gateway.globalcors.cors-configurations.[/**].allowed-headers[0]=*
+
+spring.cloud.gateway.routes[0].id=microservicio-quiz
+spring.cloud.gateway.routes[0].uri=lb://microservicio-quiz
+spring.cloud.gateway.routes[0].predicates=Path=/api/quiz/**
+spring.cloud.gateway.routes[0].filters=StripPrefix=2

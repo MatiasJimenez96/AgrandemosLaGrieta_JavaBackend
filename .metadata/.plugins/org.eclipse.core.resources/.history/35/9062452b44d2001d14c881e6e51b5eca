@@ -1,0 +1,27 @@
+package com.matiasjimenez.microservicios.app.quiz.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.matiasjimenez.microservicios.app.quiz.models.entity.Categoria;
+import com.matiasjimenez.microservicios.app.quiz.service.CategoriaService;
+
+public class CategoriaController {
+	
+	@Autowired
+	private CategoriaService servicio;
+	
+	@GetMapping("/")
+	public ResponseEntity<?> listar(){
+		return ResponseEntity.ok(servicio.listar());
+	}
+	
+	@PostMapping("/")
+	public ResponseEntity<?> guardar(@RequestBody Categoria categoria){
+		return ResponseEntity.status(Http)
+	}
+
+}

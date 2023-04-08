@@ -1,0 +1,9 @@
+package com.matiasjimenez.microservicios.commons.categoria.models.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.matiasjimenez.microservicios.app.quiz.models.entity.Categoria;
+
+public interface CategoriaRepository extends JpaRepository<Categoria, Long>{
+
+}
