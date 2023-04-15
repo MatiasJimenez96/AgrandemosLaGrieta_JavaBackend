@@ -42,7 +42,18 @@ public class Personaje {
 		this.nombre = nombre;
 	}
 
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Personaje)) {
+			return false;
+		}
+
+		Personaje p = (Personaje) obj;
+		return this.id != null && this.id.equals(p.getId());
+	}
 	
 	
 

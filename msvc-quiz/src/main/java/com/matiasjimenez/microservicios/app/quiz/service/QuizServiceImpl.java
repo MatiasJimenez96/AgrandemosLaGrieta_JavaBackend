@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.matiasjimenez.microservicios.app.quiz.models.entity.Quiz;
 import com.matiasjimenez.microservicios.app.quiz.models.repository.QuizRepository;
+import com.matiasjimenez.microservicios.commons.personajes.models.entity.Personaje;
 
 @Service
 public class QuizServiceImpl implements QuizService{
@@ -48,6 +49,17 @@ public class QuizServiceImpl implements QuizService{
 		List<Long> ids = repositorio.obtenerIdsQuiz();
         Long idAleatorio = ids.get(random.nextInt(ids.size()));
 		return repositorio.findById(idAleatorio);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Optional<Personaje> buscarPersonajePorNombre(String nombre) {
+		return repositorio.buscarPersonajePorNombre(nombre);
+	}
+
+	@Override
+	public List<Quiz> guardarTodo(List<Quiz> quizzis) {
+		return repositorio.saveAll(quizzis);
 	}
 
 }

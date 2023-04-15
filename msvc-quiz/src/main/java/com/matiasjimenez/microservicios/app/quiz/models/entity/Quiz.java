@@ -4,16 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.matiasjimenez.microservicios.commons.categoria.models.entity.Categoria;
-import com.matiasjimenez.microservicios.commons.personajes.models.entity.Opcion;
+import com.matiasjimenez.microservicios.commons.personajes.models.entity.Personaje;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,17 +24,16 @@ public class Quiz {
 
 	private String pregunta;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Opcion> opciones;
-
 	@ManyToMany(fetch = FetchType.LAZY)
 	private List<Categoria> categorias;
 
+	@ManyToMany(fetch = FetchType.LAZY)
+	private List<Personaje> personajes;
 	/* */
 
 	public Quiz() {
-		this.opciones = new ArrayList<>();
 		this.categorias = new ArrayList<>();
+		this.personajes = new ArrayList<>();
 	}
 
 	/* */
@@ -57,23 +54,8 @@ public class Quiz {
 		this.pregunta = pregunta;
 	}
 
-	public List<Opcion> getOpciones() {
-		return opciones;
-	}
 
-	public void setOpciones(List<Opcion> opciones) {
-		this.opciones.clear();
-		this.addOpciones(opciones);
-	}
-
-	public void addOpciones(List<Opcion> opciones) {
-		opciones.forEach(this.opciones::add);
-	}
-
-	public void removeOpcion(Opcion opcione) {
-		this.opciones.remove(opcione);
-	}
-
+	/**/
 	public List<Categoria> getCategorias() {
 		return categorias;
 	}
@@ -91,5 +73,22 @@ public class Quiz {
 		this.categorias.remove(categoria);
 	}
 	
+	/* */
+	public List<Personaje> getPersonajes() {
+		return this.personajes;
+	}
+	
+	public void addPersonajes(List<Personaje> personaje) {
+		personaje.forEach(this.personajes::add);
+	}
+	
+	public void setPersonajes(List<Personaje> personajes) {
+		this.personajes.clear();
+		this.addPersonajes(personajes);
+	}
+	
+	public void removePersonaje(Personaje personaje) {
+		this.personajes.remove(personaje);
+	}
 	
 }
