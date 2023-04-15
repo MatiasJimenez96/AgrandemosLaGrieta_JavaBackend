@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.matiasjimenez.microservicios.app.quiz.models.entity.Opcion;
 import com.matiasjimenez.microservicios.app.quiz.models.entity.Quiz;
 import com.matiasjimenez.microservicios.app.quiz.service.QuizService;
+import com.matiasjimenez.microservicios.commons.personajes.models.entity.Opcion;
 
 @RestController
 //@CrossOrigin({"*"})

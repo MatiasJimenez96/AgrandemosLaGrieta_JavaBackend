@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.matiasjimenez.microservicios.commons.categoria.models.entity.Categoria;
+import com.matiasjimenez.microservicios.commons.personajes.models.entity.Opcion;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

@@ -1,5 +1,0 @@
-package com.matiasjimenez.microservicios.app.quiz.models.repository;
-
-public interface CategoriaRepository {
-
-}
