@@ -3,7 +3,6 @@ package com.matiasjimenez.microservicios.app.personajes.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.matiasjimenez.microservicios.commons.personajes.models.entity.Opcion;
 import com.matiasjimenez.microservicios.commons.personajes.models.entity.Personaje;
 
 public interface PersonajeService {
@@ -18,7 +17,4 @@ public interface PersonajeService {
 
 	public void eliminarPorId(Long id);
 	
-	/* */
-	
-	public List<Opcion> listarOpciones();
 }
